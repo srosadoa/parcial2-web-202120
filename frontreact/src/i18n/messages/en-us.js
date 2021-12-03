@@ -5,6 +5,8 @@ const english = {
     report: 'Report',
     home: 'Home',
     gallery: 'Gallery',
+    report2: 'Units in Stock',
+
   },
 };
 
