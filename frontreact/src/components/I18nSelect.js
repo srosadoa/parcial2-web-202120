@@ -1,15 +1,12 @@
 import React, {useContext} from 'react';
 import { LOCALES } from '../i18n/locales';
-import {Link} from 'react-router-dom';
-import {FormattedMessage} from 'react-intl';
-import {idiomaCont} from './../index.js'
 
 export const I18nSelect = () => {
-  const idioma = useContext(idiomaCont);
+  const idioma;
   return (
     <div className="header">
       <div className="navbar">
-        <div className="banderas">
+        <div className="idiomas">
           <button onClick={() => idioma.establecerLenguaje('es-co')}></button>
           <button onClick={() => idioma.establecerLenguaje('en-us')}></button>
         </div>
@@ -17,4 +14,4 @@ export const I18nSelect = () => {
     </div>
   );
 };
-export default Header;
+export default I18nSelect;
