@@ -1,12 +1,12 @@
 import en from './en-us';
 import es from './es-co';
-import { LOCALES } from '../locales';
+import ReactDOM from "react-dom";
 import {IntlProvider} from 'react-intl';
+import { LOCALES } from '../locales';
 
-ReactDOM.render(
-	<IntlProvider locale="es-co" messages= {localeEsMessages} locale="en-us" messages= {localeEsMessages}>
-		<LOCALES/>
-	</IntlProvider>, document.getElementById("root")
-);
+const allLanguages = {
+	...en,
+	...es,
+  };
 
 export default allLanguages;
