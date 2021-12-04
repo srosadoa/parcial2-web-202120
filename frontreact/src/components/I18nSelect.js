@@ -1,6 +1,5 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import { LOCALES } from '../i18n/locales';
-
 
 export const I18nSelect = () => {
   const idioma = LOCALES.ENGLISH;
