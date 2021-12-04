@@ -1,9 +1,10 @@
-var express = require('express');
+const express = require('express')
 const { getProducts } = require('../controllers/product');
-var router = express.Router();
+const controller = require('../controllers/product');
+const router = express.Router();
 
 /* GET products listing. Please establish connection with getProduct function from controllers/product.js  */
-router.get('/', function (req, res, next) {
+router.get('/', function (req, res) {
   res.send(
     'To implement. Please establish connection with getProduct function from controllers/product.js'
   );
