@@ -1,5 +1,5 @@
 const data = require('../assets/data');
-const pp = require('../routes/product')
+const controller = {}
 
 function getProducts(query) {
   return data;

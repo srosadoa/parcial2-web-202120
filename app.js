@@ -18,6 +18,8 @@ app.use(express.static(path.join(__dirname, 'frontreact/build')));
 
 app.use('/api/products', productRouter);
 
+app.use(require('./routes/product'));
+
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'frontreact/build/index.html'));
 });
