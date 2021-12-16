@@ -46,19 +46,19 @@ export const Chart = ({ width = 600, height = 600, data }) => {
       .attr("y", (d) => y(d.stock))
       .attr("height", (d) => iheight - y(d.stock))
       .attr("width", x.bandwidth())
-      .on("raton", (d) => {
-        Tooltip
-          .style("visibility", "visible")
-          .text(`${d.name}:` + `${d.stock}`);
-      })
-      .on("raton2", (e) => {
-        Tooltip
-          .style("top", e.pageY - 25 + "px")
-          .style("left", e.pageX - 25 + "px");
-      })
-      .on("raton3", () => {
-        Tooltip.style("visibility", "hidden");
-      });
+      // .on("raton", (d) => {
+      //   Tooltip
+      //     .style("visibility", "visible")
+      //     .text(`${d.name}:` + `${d.stock}`);
+      // })
+      // .on("raton2", (e) => {
+      //   Tooltip
+      //     .style("top", e.pageY - 25 + "px")
+      //     .style("left", e.pageX - 25 + "px");
+      // })
+      // .on("raton3", () => {
+      //   Tooltip.style("visibility", "hidden");
+      // });
     ;
     g.append("g").classed("y--axis", true).call(d3.axisLeft(y));
   });
