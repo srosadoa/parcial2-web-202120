@@ -27,45 +27,41 @@ export const Chart = ({ width = 600, height = 600, data }) => {
 
     // Continue with implementation. Don't forget the tooltip
     var Tooltip = d3.select("#chartArea")
-      .append("div") 
-      .style("visibility","hidden")
+      .append("div")
+      .style("visibility", "hidden")
       .attr("class", "tooltip")
-      .style("background-color","white")
-      .style("padding", "5.5px")
-      .style("position","absolute")
-      .style("border-width","2.5px")
-      .style("border-radius","4.5px")
+      .style("background-color", "white")
+      .style("padding", "5px")
+      .style("position", "absolute")
       .style("border", "solid")
+      .style("border-width", "2px")
+      .style("border-radius", "5px")
       ;
-    var raton = function(d){
-      Tooltip.style("visibility","visible")
-      .html(`${d.target._data_.name}: ${d.target._data_.stock}`
-      );
-    };
-    var raton2 = function(d){
-      Tooltip.style("left",d.pageX + 14 + "px")
-      .style("top", d.pageY + "px");
-    };
-    var raton3 = function(d){
-      Tooltip.style("visibility","hidden")
-    };
 
-    const bars = g.selectAll("react").data(data);
-    bars.enter().append("react")
-    .attr("class", "bar")
-    .style("fill","rgb(53 53 184)")
-    .attr("x", (d) => x(d.name))
-    .attr("y", (d) => y(d.stock))
-    .attr("height",(d) => iheight - y(d.stock))
-    .attr("width", x.bandwidth())
-    .on("raton", raton)
-    .on("raton2", raton2)
-    .on("raton3", raton3)
+    const barras = g.selectAll("react").data(data);
+    barras.enter().append("rect")
+      .attr("class", "bar")
+      .style("fill", "rgb(53 53 184)")
+      .attr("x", (d) => x(d.name))
+      .attr("y", (d) => y(d.stock))
+      .attr("height", (d) => iheight - y(d.stock))
+      .attr("width", x.bandwidth())
+      .on("raton", (d) => {
+        Tooltip
+          .style("visibility", "visible")
+          .text(`${d.name}:` + `${d.stock}`);
+      })
+      .on("raton2", (e) => {
+        Tooltip
+          .style("top", e.pageY - 25 + "px")
+          .style("left", e.pageX - 25 + "px");
+      })
+      .on("raton3", () => {
+        Tooltip.style("visibility", "hidden");
+      });
     ;
-
-    g.append("g").classed("y--axis",true).call(d3.axisLeft(y));
+    g.append("g").classed("y--axis", true).call(d3.axisLeft(y));
   });
-
   return (
     <div id='chartArea'>
       <svg ref={barChart}></svg>

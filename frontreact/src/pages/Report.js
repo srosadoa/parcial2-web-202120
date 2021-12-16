@@ -10,13 +10,14 @@ export const Report = () => {
       setProducts(await getProductsService());
     };
     fetchProd();
-  }, []);
+  },
+    []);
 
   return (
     <section id='report'>
       <div className='report-container'>
         <h1><FormattedMessage id="report2" /> </h1>
-        <Chart data={products}/>
+        <Chart data={products} />
       </div>
     </section>
   );

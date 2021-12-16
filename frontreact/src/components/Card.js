@@ -9,7 +9,7 @@ import "./Card.scss";
 export const Card = (props) => {
   const { name, picture, price, isActive } = props;
   let estilo = {};
-  if (isActive !== "true") {
+  if (isActive !== "true") { //Sombreamos los que tengan Active como falso
     estilo = {
       filter: "grayscale(100%)",
       backgroundColor: "rgb(200, 200, 200)",
