@@ -19,9 +19,11 @@ export const NavBar = ({ onSearchKeyChange, idomaCambio , idiomaActual  }) => {
           <nav className='menu-items'>
             <div className='menu-links'>
               <Link className='nav-item' aria-current='page' to='/'>
+                {/* Cambio idioma de "home" en navbar */}
                 <FormattedMessage id='home' />
               </Link>
               <Link className='nav-item' aria-current='page' to='/report'>
+                {/* Cambio idioma de "report" en navbar*/}
                 <FormattedMessage id='report' />
               </Link>
             </div>
