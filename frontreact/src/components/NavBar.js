@@ -31,6 +31,7 @@ export const NavBar = ({ onSearchKeyChange, idomaCambio , idiomaActual  }) => {
               <span onClick={(e) => showSearchContainer(e)}>
                 <i className='material-icons search'>search</i>
               </span>
+               {/* Cambio idioma selector*/}
               <I18nSelect idomaCambio={idomaCambio} idiomaActual={idiomaActual }></I18nSelect>
             </div>
           </nav>

@@ -12,11 +12,12 @@ export const I18nSelect = ({ idomaCambio, idiomaActual }) => {
       className="i18n-selector"
       value={idiomaActual}
       onChange={cambioDeidioma}
-    ><option value={LOCALES.SPANISH}>
-        {idiomaActual === LOCALES.ENGLISH ? "Spanish" : "Español"}
-      </option>
+    >
       <option value={LOCALES.ENGLISH}>
         {idiomaActual === LOCALES.ENGLISH ? "English" : "Inglés"}
+      </option>
+      <option value={LOCALES.SPANISH}>
+        {idiomaActual === LOCALES.ENGLISH ? "Spanish" : "Español"}
       </option>
     </select>
   );

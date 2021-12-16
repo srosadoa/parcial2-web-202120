@@ -12,21 +12,15 @@ export const Home = ({ searchKey }) => {
   useEffect(() => {
     fetchProd(searchKey);
   }, [searchKey]);
-
   return (
     <section id='home'>
       <div className='home-container'>
         <h1><FormattedMessage id='gallery' /></h1>
         <div className='home-card'>
-          {products
-          .map((m) => {
-            return (
-              <Card key={products._id}
-                name={m.name}
-                picture={m.picture}
-                price={m.price}
-                isActive={m.isActive}
-              />
+          {products.map((m) => {
+            return (<Card key={products._id} name={m.name} picture={m.picture}
+              price={m.price} isActive={m.isActive}
+            />
             );
           })}
         </div>

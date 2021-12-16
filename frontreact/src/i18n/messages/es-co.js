@@ -5,7 +5,7 @@ const spanish = {
     report: 'Reporte',
     home: 'Inicio',
     gallery: 'Galería',
-    report2: 'Unidades en Inventario',
+    report2: 'Unidades en Inventario', //adicion de titulo de reportes
   },
 };
 

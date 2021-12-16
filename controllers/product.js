@@ -9,5 +9,4 @@ function getProducts(query) {
     return datosRequeridos;
   }
 }
-
 module.exports = { getProducts };

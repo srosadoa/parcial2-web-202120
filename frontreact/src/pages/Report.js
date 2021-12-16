@@ -7,7 +7,7 @@ export const Report = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     async function fetchDatos() {
-      const productsFetch = await getProductsService();
+      const productsFetch = await getProductsService(); //Obtencion servicio
       setProducts(productsFetch);
     }
     fetchDatos();
@@ -16,7 +16,8 @@ export const Report = () => {
   return (
     <section id='report'>
       <div className='report-container'>
-        <h1><FormattedMessage id="report2" /> </h1>
+         {/* Cambio idioma de "report2" en vista Reporte*/}
+        <h1><FormattedMessage id="report2" /> </h1> 
         <Chart data={products} />
       </div>
     </section>
