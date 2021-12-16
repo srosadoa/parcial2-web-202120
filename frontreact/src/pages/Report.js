@@ -6,12 +6,12 @@ import { getProductsService } from '../services/product';
 export const Report = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    const fetchProd = async () => {
-      setProducts(await getProductsService());
-    };
-    fetchProd();
-  },
-    []);
+    async function fetchDatos() {
+      const productsFetch = await getProductsService();
+      setProducts(productsFetch);
+    }
+    fetchDatos();
+  }, []);
 
   return (
     <section id='report'>

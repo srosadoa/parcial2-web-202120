@@ -3,7 +3,6 @@ import * as d3 from 'd3';
 
 export const Chart = ({ width = 600, height = 600, data }) => {
   const barChart = useRef();
-
   useEffect(() => {
     const margin = { top: 10, left: 50, bottom: 40, right: 10 };
     const iwidth = width - margin.left - margin.right;
@@ -13,8 +12,7 @@ export const Chart = ({ width = 600, height = 600, data }) => {
     svg.attr('width', width);
     svg.attr('height', height);
 
-    let g = svg
-      .append('g')
+    let g = svg.append('g')
       .attr('transform', `translate(${margin.left},${margin.top})`);
 
     const y = d3.scaleLinear().domain([0, 500]).range([iheight, 0]);
@@ -30,14 +28,13 @@ export const Chart = ({ width = 600, height = 600, data }) => {
       .append("div")
       .style("visibility", "hidden")
       .attr("class", "tooltip")
-      .style("background-color", "white")
       .style("padding", "5px")
       .style("position", "absolute")
+      .style("background-color", "white")
       .style("border", "solid")
       .style("border-width", "2px")
       .style("border-radius", "5px")
       ;
-
     const barras = g.selectAll("react").data(data); //construcción de barras
     barras.enter().append("rect")
       .attr("class", "bar")
@@ -46,19 +43,20 @@ export const Chart = ({ width = 600, height = 600, data }) => {
       .attr("y", (d) => y(d.stock))
       .attr("height", (d) => iheight - y(d.stock))
       .attr("width", x.bandwidth())
-      // .on("raton", (d) => {
-      //   Tooltip
-      //     .style("visibility", "visible")
-      //     .text(`${d.name}:` + `${d.stock}`);
-      // })
-      // .on("raton2", (e) => {
-      //   Tooltip
-      //     .style("top", e.pageY - 25 + "px")
-      //     .style("left", e.pageX - 25 + "px");
-      // })
-      // .on("raton3", () => {
-      //   Tooltip.style("visibility", "hidden");
-      // });
+      .on("raton", (d) => {
+        Tooltip
+          .style("visibility", "visible")
+          .html(`${d.target.__data__.name}: ${d.target.__data__.stock}`);
+      })
+      .on("raton2", (d) => {
+        Tooltip
+          .style("left", d.pageX + 15 + "px").style(
+          "top",
+          d.pageY + "px")
+      })
+      .on("raton3", (d) => {
+        Tooltip.style("visibility", "hidden");
+      });
     ;
     g.append("g").classed("y--axis", true).call(d3.axisLeft(y));
   });

@@ -17,7 +17,8 @@ export const Card = (props) => {
     }
   }
   return (
-    <div className="card-wrapper" style={estilo}>
+    //borde de las cards 
+    <div className="card-border" style={estilo}>
       <div className="card-margin">
         <div className='card-header'>
           <p className='card-title'>{name}</p>
