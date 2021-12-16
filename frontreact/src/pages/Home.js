@@ -18,10 +18,10 @@ export const Home = ({ searchKey }) => {
       <div className='home-container'>
         <h1><FormattedMessage id='gallery' /></h1>
         <div className='home-card'>
-          {products?.map((m) => {
+          {products
+          .map((m) => {
             return (
-              <Card
-                key={products._id}
+              <Card key={products._id}
                 name={m.name}
                 picture={m.picture}
                 price={m.price}

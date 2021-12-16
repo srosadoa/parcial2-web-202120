@@ -50,7 +50,7 @@ export const Chart = ({ width = 600, height = 600, data }) => {
       Tooltip.style("visibility","hidden")
     };
 
-    const bars = g.slectAll("react").data(data);
+    const bars = g.selectAll("react").data(data);
     bars.enter().append("react")
     .attr("class", "bar")
     .style("fill","rgb(53 53 184)")

@@ -5,7 +5,7 @@ const spanish = {
     report: 'Reporte',
     home: 'Inicio',
     gallery: 'Galería',
-    report2: 'Unidades en inventario',
+    report2: 'Unidades en Inventario',
   },
 };
 

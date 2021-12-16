@@ -15,8 +15,8 @@ export const Report = () => {
   return (
     <section id='report'>
       <div className='report-container'>
-        <h1>Unidades en inventario</h1>
-        <p>Show here the graph</p>
+        <h1><FormattedMessage id="report2" /> </h1>
+        <Chart data={products}/>
       </div>
     </section>
   );
