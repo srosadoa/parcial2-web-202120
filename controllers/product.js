@@ -1,11 +1,12 @@
 const data = require('../assets/data');
 
 function getProducts(query) {
+  let datosRequeridos = data;
   if(query){
-    data = data.filter(producto => producto.name.toLowerCase().includes(query.toLowerCase()));
-    return data;
+    datosRequeridos = datosRequeridos.filter(producto => producto.name.toLowerCase().includes(query.toLowerCase()));
+    return datosRequeridos;
   }else{
-    return data;
+    return datosRequeridos;
   }
 }
 
