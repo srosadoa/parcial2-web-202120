@@ -38,7 +38,7 @@ export const Chart = ({ width = 600, height = 600, data }) => {
       .style("border-radius", "5px")
       ;
 
-    const barras = g.selectAll("react").data(data);
+    const barras = g.selectAll("react").data(data); //construcción de barras
     barras.enter().append("rect")
       .attr("class", "bar")
       .style("fill", "rgb(53 53 184)")
