@@ -2,7 +2,7 @@ const data = require('../assets/data');
 
 function getProducts(query) {
   if(query){
-    data = data.filter(p => p.name.toLowerCase().includes(query.toLowerCase()));
+    data = data.filter(producto => producto.name.toLowerCase().includes(query.toLowerCase()));
     return data;
   }else{
     return data;

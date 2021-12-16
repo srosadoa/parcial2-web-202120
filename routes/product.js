@@ -4,8 +4,7 @@ var router = express.Router();
 
 /* GET products listing. Please establish connection with getProduct function from controllers/product.js  */
 router.get('/', function (req, res, next) {
-  var query = req.query.q;
-  const resp = productController.getProducts(query);
+  const resp = productController.getProducts(req.query.q);
   res.send(resp);
 });
 
