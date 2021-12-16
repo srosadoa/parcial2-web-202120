@@ -19,7 +19,7 @@ function App() {
   return (
     <IntlProvider locale={language} messages={messages[language]}>
       <header>
-        <NavBar onSearchKeyChange={setSearchkey} cambioLenguaje ={setLanguage} lenguajeActual={language}/>
+        <NavBar onSearchKeyChange={setSearchkey} idomaCambio ={setLanguage} idiomaActual={language}/>
       </header>
       <main>
         <Routes>

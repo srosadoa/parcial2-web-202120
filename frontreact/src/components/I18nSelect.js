@@ -1,21 +1,22 @@
 import React from 'react';
 import { LOCALES } from '../i18n/locales';
 
-export const I18nSelect = () => {
-  function seleccionarIdioma(s){
-    const nl = s.target.value;
-    
+export const I18nSelect = ({idomaCambio, idiomaActual}) => {
+  function cambioDeidioma(e) {
+    const nl = e.target.value;
+    idomaCambio(nl);
   }
-  const idioma = LOCALES.ENGLISH;
   return (
-    <div className="header">
-      <div className="navbar">
-        <div className="idiomas">
-          <button onClick={() => idioma.establecerLenguaje('es-co')}>Español</button>
-          <button onClick={() => idioma.establecerLenguaje('en-us')}>English</button>
-        </div>
-      </div>
-    </div>
+    <select
+      className="i18n-selector"
+      value={idiomaActual}
+      onChange={cambioDeidioma}
+    ><option value={LOCALES.SPANISH}>
+        {idiomaActual === LOCALES.ENGLISH ? "Spanish" : "Español"}
+      </option>
+      <option value={LOCALES.ENGLISH}>
+        {idiomaActual === LOCALES.ENGLISH ? "English" : "Inglés"}
+      </option>
+    </select>
   );
 };
-export default I18nSelect;
